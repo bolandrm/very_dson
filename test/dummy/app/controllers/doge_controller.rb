@@ -1,5 +1,5 @@
 class DogeController < ApplicationController
   def index
-    render dson: "hello"
+    render dson: { "foo" => ["bar", "baz", "fizzbuzz"] }
   end
 end

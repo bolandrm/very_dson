@@ -1,8 +1,12 @@
 require "test_helper"
 
 class RenderDogeTest < ActionDispatch::IntegrationTest
-  test "just passes strings through" do
+  test "renders dson" do
     get root_path
-    assert_match "hello doge", response.body
+
+    output = response.body.gsub("also", "and")
+
+    assert_match /such "foo" is so "bar" (and|also) "baz" (and|also) "fizzbuzz" many wow/,
+                 output
   end
 end
