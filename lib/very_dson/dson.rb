@@ -79,7 +79,7 @@ module VeryDSON
       end
 
       def object_to_key_value(value)
-        if value.is_a?(Date) || value.is_a?(DateTime) || Value.is_a?(ActiveSupport::TimeWithZone)
+        if value.is_a?(Date) || value.is_a?(DateTime) || value.is_a?(ActiveSupport::TimeWithZone)
           simplify(value.to_s)
         elsif value.respond_to?(:to_a)
           simplify(value.to_a)
