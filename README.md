@@ -1,4 +1,4 @@
-# Very DSON
+# Very DSON [![Build Status](https://travis-ci.org/bolandrm/very_dson.svg?branch=master)](https://travis-ci.org/bolandrm/very_dson)
 
 **Very DSON** is improves the accessibility of your Rails project by allowing you to render your API results in [DSON - Doge Serialized Object Notation](http://dogeon.org/).
 
