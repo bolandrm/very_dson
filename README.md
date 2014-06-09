@@ -8,7 +8,10 @@
 Add the gem to your Gemfile:
 
 ```ruby
-gem "very_dson", github: "bolandrm/very_dson"
+gem "very_dson"
+
+# or, get the latest:
+# gem "very_dson", github: "bolandrm/very_dson", branch: "master"
 ```
 
 Run `bundle install`.
