@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = VeryDSON::VERSION
   s.authors     = ["Ryan Boland"]
   s.email       = ["ryan@appcasts.io"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/bolandrm/very_dson"
   s.summary     = "very_dson-#{VeryDSON::VERSION}"
   s.description = "DSON renderer for Rails"
   s.license     = "MIT"
