@@ -1,6 +1,6 @@
 # Very DSON
 
-*Very DSON* is improves the accessibility of your Rails project by allowing you to render your API results in (DSON - Doge Serialized Object Notation)[http://dogeon.org/].
+**Very DSON** is improves the accessibility of your Rails project by allowing you to render your API results in [DSON - Doge Serialized Object Notation](http://dogeon.org/).
 
 
 ## Quick Start
