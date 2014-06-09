@@ -22,4 +22,3 @@ module Dummy
     config.secret_key_base = "test"
   end
 end
-

@@ -2,7 +2,7 @@ require "test_helper"
 
 class RenderDogeTest < ActionDispatch::IntegrationTest
   test "renders dson" do
-    get root_path
+    get "doge.dson"
 
     output = response.body.gsub("also", "and")
 

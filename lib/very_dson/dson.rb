@@ -35,7 +35,7 @@ module VeryDSON
           value = delimited(:array, value)
           "so #{value} many"
         else
-          raise "such fail #{value}"
+          raise "such fail - cannot stringify #{value}"
         end
       end
 
@@ -43,6 +43,8 @@ module VeryDSON
         case value
         when Symbol
           EscapedString.new(value.to_s)
+        when EscapedString
+          value
         when String
           EscapedString.new(value)
         when Numeric, NilClass, TrueClass, FalseClass
@@ -77,12 +79,16 @@ module VeryDSON
       end
 
       def object_to_key_value(value)
-        if value.respond_to?(:attributes)
-          value.attributes
+        if value.respond_to?(:to_a)
+          simplify(value.to_a)
+        elsif value.respond_to?(:attributes)
+          simplify(value.attributes)
         elsif value.respond_to?(:to_hash)
-          value.to_hash
+          simplify(value.to_hash)
+        elsif value.respond_to?(:instance_values)
+          simplify(value.instance_values)
         else
-          value.instance_values
+          raise "such fail - cannot convert to key value #{value}"
         end
       end
     end
