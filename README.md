@@ -23,6 +23,12 @@ class DogeController < ApplicationController
 end
 ```
 
+This will output the following:
+
+```
+such "foo" is so "bar" also "baz" also "fizzbuzz" many? "doge" is yes wow
+```
+
 
 ## License
 
