@@ -30,6 +30,14 @@ module VeryDSON
         input: {"foo"=>{"shiba"=>"inu","doge"=>true}},
         output: /such "foo" is such "shiba" is "inu"(\.|!|,|\?) "doge" is yes wow wow/
       },
+      {
+        input: {"foo"=>{"shiba"=>"inu","doge"=>{"good"=>true,"a"=>nil,"b"=>false}}},
+        output: /such "foo" is such "shiba" is "inu"(\.|!|,|\?) "doge" is such "good" is yes(\.|!|,|\?) "a" is empty(\.|!|,|\?) "b" is no wow wow wow/
+      },
+      {
+        input: {foo:83},
+        output: /such "foo" is 123 wow/
+      },
     ]
 
     test_pairs.each_with_index do |test_pair, i|

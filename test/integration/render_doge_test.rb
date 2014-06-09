@@ -6,7 +6,7 @@ class RenderDogeTest < ActionDispatch::IntegrationTest
 
     output = response.body.gsub("also", "and")
 
-    assert_match /such "foo" is so "bar" (and|also) "baz" (and|also) "fizzbuzz" many wow/,
+    assert_match /such "foo" is so "bar" (and|also) "baz" (and|also) "fizzbuzz" many(\.|!|,|\?) "doge" is yes wow/,
                  output
   end
 end

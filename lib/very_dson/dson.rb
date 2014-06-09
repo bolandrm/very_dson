@@ -29,10 +29,11 @@ module VeryDSON
           value = value.map do |k, v|
             "#{_stringify(k)} is #{_stringify(v)}"
           end
-
-          "such #{value.join(delimiter)} wow"
+          value = delimited(:hash, value, stringify: false)
+          "such #{value} wow"
         when Array
-          delimited_array(value)
+          value = delimited(:array, value)
+          "so #{value} many"
         else
           raise "such fail #{value}"
         end
@@ -55,19 +56,24 @@ module VeryDSON
         end
       end
 
-      def delimited_array(value)
+      def delimited(type, value, stringify: true)
         string = ""
 
-        value.map { |v| _stringify(v) }.each_with_index do |v, i|
+        value = value.map { |v| _stringify(v) } if stringify
+
+        value.each_with_index do |v, i|
           if i == 0
             string = v
           else
-            delimiter = " #{ARRAY_DELIMITERS.sample} "
+            if type == :hash
+              delimiter = "#{OBJECT_PAIR_DELIMITERS.shuffle.sample} "
+            else
+              delimiter = " #{ARRAY_DELIMITERS.shuffle.sample} "
+            end
             string = [string, v].join(delimiter)
           end
         end
-
-        "so #{string} many"
+        string
       end
 
       def object_to_key_value(value)
