@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "doge", to: "doge#index"
+  get "doge/choice", to: "doge#choice"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

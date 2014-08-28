@@ -3,6 +3,6 @@ module VeryDSON
 
   ActionController::Renderers.add :dson do |dson, options|
     self.content_type ||= Mime::DSON
-    DSON.stringify(dson)
+    DSON.such_serialize_wow(dson)
   end
 end
